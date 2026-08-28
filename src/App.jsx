@@ -27,6 +27,29 @@ const nav = [
   { href: '/contact', label: 'Contact' },
 ]
 
+const pageSeo = {
+  '/': {
+    title: 'Sky Handlers Logistics | Hong Kong & China Freight Forwarding',
+    description: 'Air freight, sea freight, warehousing, customs clearance and China logistics coordinated from Hong Kong to destinations worldwide.',
+  },
+  '/about': {
+    title: 'About Sky Handlers Logistics | Hong Kong Freight Partner',
+    description: 'Meet the Hong Kong logistics partner coordinating freight, warehousing, customs and cargo movement across China and global markets.',
+  },
+  '/freight': {
+    title: 'Air & Sea Freight from Hong Kong and China | Sky Handlers',
+    description: 'International air and sea freight for urgent, high-value, consolidated, project and oversized cargo from Hong Kong and Mainland China.',
+  },
+  '/china-logistics': {
+    title: 'Hong Kong & China Logistics Services | Sky Handlers',
+    description: 'Factory pickup, supplier collection, cross-border transport, warehousing, customs clearance and export handling across Hong Kong and China.',
+  },
+  '/contact': {
+    title: 'Request a Freight Quote | Sky Handlers Logistics',
+    description: 'Contact Sky Handlers Logistics for a tailored air freight, sea freight, warehousing, customs or China logistics quotation.',
+  },
+}
+
 const validPaths = new Set(nav.map((item) => item.href))
 const network = ['Hong Kong', 'Dubai', 'Mumbai', 'Istanbul', 'Jeddah', 'Bangkok']
 const freightFactors = ['Cargo type', 'Weight', 'Volume', 'Urgency', 'Destination', 'Budget', 'Special handling']
@@ -87,8 +110,16 @@ function App() {
   }, [])
 
   useEffect(() => {
-    const title = nav.find((item) => item.href === path)?.label || 'Home'
-    document.title = title + ' — Sky Handlers Logistics'
+    const seo = pageSeo[path]
+    const canonical = window.location.origin + path
+    document.title = seo.title
+    document.querySelector('meta[name="description"]').content = seo.description
+    document.querySelector('meta[property="og:title"]').content = seo.title
+    document.querySelector('meta[property="og:description"]').content = seo.description
+    document.querySelector('meta[property="og:url"]').content = canonical
+    document.querySelector('meta[name="twitter:title"]').content = seo.title
+    document.querySelector('meta[name="twitter:description"]').content = seo.description
+    document.querySelector('link[rel="canonical"]').href = canonical
   }, [path])
 
   const page = useMemo(() => ({
@@ -194,11 +225,11 @@ function HomePage() {
 function HomeHero() {
   return (
     <ScrollLockedVideoHero
-      videoSrc="/sky-handlers-hero.mp4"
-      posterSrc="/hero-gateway.jpg"
+      videoSrc="/gateway-opens.mp4"
+      posterSrc="/gateway-opens-poster.jpg"
       eyebrow="Sky Handlers Logistics / Hong Kong"
-      title="Your logistics gateway"
-      tagline="Hong Kong, China and the world. Handled."
+      title="The world opens"
+      tagline="Your gateway to Hong Kong, China and the world."
     />
   )
 }

@@ -8,8 +8,8 @@ export default function ScrollLockedVideoHero({
   title,
   tagline,
   eyebrow,
-  scrollHint = 'Scroll to move cargo',
-  scrubDistance = 2200,
+  scrollHint = 'Scroll',
+  scrubDistance = 3200,
 }) {
   const sectionRef = useRef(null)
   const videoRef = useRef(null)
@@ -49,17 +49,16 @@ export default function ScrollLockedVideoHero({
     const onLoadedData = () => {
       duration = video.duration || 0
       setReady(true)
-      if (reduceMotion && duration) video.currentTime = duration * 0.72
+      if (reduceMotion && duration) video.currentTime = duration * 0.92
     }
 
     const onSeeked = () => {
       seeking = false
-      if (pendingTime !== null) {
-        const nextTime = pendingTime
-        pendingTime = null
-        seeking = true
-        video.currentTime = nextTime
-      }
+      if (pendingTime === null) return
+      const nextTime = pendingTime
+      pendingTime = null
+      seeking = true
+      video.currentTime = nextTime
     }
 
     const seekTo = (time) => {
@@ -140,7 +139,7 @@ export default function ScrollLockedVideoHero({
       titleRef.current.style.transform = 'translateY(' + ((1 - titleProgress) * -24) + 'px) scale(' + (0.96 + titleProgress * 0.04) + ')'
       titleRef.current.style.filter = 'blur(' + ((1 - titleProgress) * 10) + 'px)'
 
-      const taglineProgress = clamp((currentProgress - 0.76) / 0.2, 0, 1)
+      const taglineProgress = clamp((currentProgress - 0.82) / 0.18, 0, 1)
       taglineRef.current.style.opacity = String(taglineProgress)
       taglineRef.current.style.transform = 'translateY(' + ((1 - taglineProgress) * 20) + 'px) scale(' + (0.97 + taglineProgress * 0.03) + ')'
       taglineRef.current.style.filter = 'blur(' + ((1 - taglineProgress) * 8) + 'px)'
