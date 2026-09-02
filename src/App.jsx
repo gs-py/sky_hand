@@ -311,7 +311,7 @@ function ServiceFeature({ service, index }) {
       <a href={service.href} onClick={(event) => { event.preventDefault(); navigateTo(service.href) }} className="focus-ring block h-full">
         <div className={'relative overflow-hidden rounded-[22px] ' + (index === 2 ? 'lg:grid lg:grid-cols-[1.1fr_.9fr]' : '')}>
           <div className={'image-zoom relative ' + (index === 2 ? 'min-h-[340px]' : 'aspect-[4/3]')}>
-            <img src={service.image} alt="" className="h-full w-full object-cover" />
+            <img src={service.image} alt="" className={(index === 2 ? 'absolute inset-0 ' : '') + 'h-full w-full object-cover'} />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
             <span className="absolute left-5 top-5 rounded-full border border-white/35 bg-white/10 px-3 py-1.5 text-[9px] font-bold tracking-[0.15em] text-white backdrop-blur">{service.no}</span>
             <span className="absolute bottom-5 left-5 eyebrow text-white/70">{service.label}</span>
