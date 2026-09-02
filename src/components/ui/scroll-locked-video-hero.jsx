@@ -43,8 +43,7 @@ export default function ScrollLockedVideoHero({
     let completedForward = false
     let lockedScrollY = 0
     let touchY = 0
-    let seeking = false
-    let pendingTime = null
+    let lastRequestedTime = 0
 
     const onMediaReady = () => {
       duration = video.duration || 0
@@ -53,21 +52,9 @@ export default function ScrollLockedVideoHero({
       if (reduceMotion && duration) video.currentTime = duration * 0.92
     }
 
-    const onSeeked = () => {
-      seeking = false
-      if (pendingTime === null) return
-      const nextTime = pendingTime
-      pendingTime = null
-      seekTo(nextTime)
-    }
-
     const seekTo = (time) => {
-      if (Math.abs(video.currentTime - time) < 0.01) return
-      if (seeking) {
-        pendingTime = time
-        return
-      }
-      seeking = true
+      if (Math.abs(lastRequestedTime - time) < 0.04) return
+      lastRequestedTime = time
       video.currentTime = time
     }
 
@@ -155,8 +142,6 @@ export default function ScrollLockedVideoHero({
     video.addEventListener('loadedmetadata', onMediaReady)
     video.addEventListener('loadeddata', onMediaReady)
     video.addEventListener('canplay', onMediaReady)
-    video.addEventListener('seeked', onSeeked)
-
     if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) onMediaReady()
 
     if (!reduceMotion) {
@@ -172,7 +157,6 @@ export default function ScrollLockedVideoHero({
       video.removeEventListener('loadedmetadata', onMediaReady)
       video.removeEventListener('loadeddata', onMediaReady)
       video.removeEventListener('canplay', onMediaReady)
-      video.removeEventListener('seeked', onSeeked)
       window.removeEventListener('wheel', onWheel)
       window.removeEventListener('touchstart', onTouchStart)
       window.removeEventListener('touchmove', onTouchMove)
