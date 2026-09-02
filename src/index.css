@@ -118,6 +118,10 @@ a {
   touch-action: none;
 }
 
+.mobile-home-hero {
+  display: none;
+}
+
 .scroll-video-hero video,
 .scroll-video-poster {
   position: absolute;
@@ -454,6 +458,76 @@ a {
 
   .hero-image {
     object-position: 61% center;
+  }
+
+  .home-desktop-hero {
+    display: none;
+  }
+
+  .mobile-home-hero {
+    position: relative;
+    display: flex;
+    min-height: 650px;
+    margin: 6px;
+    overflow: hidden;
+    align-items: flex-end;
+    border-radius: 18px;
+    background: #14262b;
+    padding: 32px 26px;
+    color: #fffefa;
+  }
+
+  .mobile-home-hero > img,
+  .mobile-home-hero-shade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobile-home-hero > img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .mobile-home-hero-shade {
+    background: linear-gradient(180deg, rgba(20, 38, 43, .12) 15%, rgba(20, 38, 43, .88) 84%);
+  }
+
+  .mobile-home-hero-content,
+  .mobile-home-hero-services {
+    position: relative;
+    z-index: 1;
+  }
+
+  .mobile-home-hero-content h1 {
+    max-width: 9ch;
+    margin-top: 18px;
+    font-size: clamp(3.4rem, 15vw, 4.8rem);
+    line-height: .86;
+    letter-spacing: -.06em;
+  }
+
+  .mobile-home-hero-content > p:not(.eyebrow) {
+    max-width: 30ch;
+    margin: 20px 0 24px;
+    color: rgba(255, 254, 250, .74);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .mobile-home-hero-services {
+    position: absolute;
+    top: 28px;
+    right: 24px;
+    max-width: 14ch;
+    color: rgba(255, 254, 250, .58);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    line-height: 1.55;
+    text-align: right;
+    text-transform: uppercase;
   }
 
   .scroll-video-hero {
