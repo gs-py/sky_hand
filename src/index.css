@@ -114,6 +114,10 @@ a {
   color: #f2f4f8;
 }
 
+.scroll-video-hero.is-locked {
+  touch-action: none;
+}
+
 .scroll-video-hero video,
 .scroll-video-poster {
   position: absolute;

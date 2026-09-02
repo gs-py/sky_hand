@@ -46,8 +46,9 @@ export default function ScrollLockedVideoHero({
     let seeking = false
     let pendingTime = null
 
-    const onLoadedData = () => {
+    const onMediaReady = () => {
       duration = video.duration || 0
+      if (!duration) return
       setReady(true)
       if (reduceMotion && duration) video.currentTime = duration * 0.92
     }
@@ -57,11 +58,11 @@ export default function ScrollLockedVideoHero({
       if (pendingTime === null) return
       const nextTime = pendingTime
       pendingTime = null
-      seeking = true
-      video.currentTime = nextTime
+      seekTo(nextTime)
     }
 
     const seekTo = (time) => {
+      if (Math.abs(video.currentTime - time) < 0.01) return
       if (seeking) {
         pendingTime = time
         return
@@ -74,6 +75,7 @@ export default function ScrollLockedVideoHero({
       if (locked || reduceMotion) return
       locked = true
       lockedScrollY = window.scrollY
+      section.classList.add('is-locked')
       body.style.position = 'fixed'
       body.style.top = '-' + lockedScrollY + 'px'
       body.style.left = '0'
@@ -84,6 +86,7 @@ export default function ScrollLockedVideoHero({
     const releaseLock = (continueDown = false) => {
       if (!locked) return
       locked = false
+      section.classList.remove('is-locked')
       body.style.position = previousBody.position
       body.style.top = previousBody.top
       body.style.left = previousBody.left
@@ -149,8 +152,12 @@ export default function ScrollLockedVideoHero({
       rafId = requestAnimationFrame(frame)
     }
 
-    video.addEventListener('loadeddata', onLoadedData)
+    video.addEventListener('loadedmetadata', onMediaReady)
+    video.addEventListener('loadeddata', onMediaReady)
+    video.addEventListener('canplay', onMediaReady)
     video.addEventListener('seeked', onSeeked)
+
+    if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) onMediaReady()
 
     if (!reduceMotion) {
       window.addEventListener('wheel', onWheel, { passive: false })
@@ -162,7 +169,9 @@ export default function ScrollLockedVideoHero({
     }
 
     return () => {
-      video.removeEventListener('loadeddata', onLoadedData)
+      video.removeEventListener('loadedmetadata', onMediaReady)
+      video.removeEventListener('loadeddata', onMediaReady)
+      video.removeEventListener('canplay', onMediaReady)
       video.removeEventListener('seeked', onSeeked)
       window.removeEventListener('wheel', onWheel)
       window.removeEventListener('touchstart', onTouchStart)
