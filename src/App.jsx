@@ -257,14 +257,13 @@ function HomeHero() {
       <img src="/gateway-opens-poster.jpg" alt="Cargo gateway doors" />
       <div className="mobile-home-hero-shade" />
       <div className="mobile-home-hero-content">
-        <p className="eyebrow text-acid">Hong Kong / China / Worldwide</p>
-        <h1 className="serif-display">Freight, clearly coordinated.</h1>
-        <p>Air freight, sea freight and China logistics managed through one dependable partner.</p>
+        <p className="eyebrow text-acid">International freight coordination</p>
+        <h1 className="serif-display">One partner.<br />Every shipment.</h1>
+        <p>Air freight, sea freight and China logistics, coordinated from origin to destination.</p>
         <a href="/contact" onClick={(event) => { event.preventDefault(); navigateTo('/contact') }} className="focus-ring touchable inline-flex items-center gap-2 rounded-lg bg-acid px-4 py-3 text-[10px] font-bold uppercase tracking-[0.14em] text-ink">
-          Get a quotation <ArrowRight className="h-3.5 w-3.5" />
+          Request a quotation <ArrowRight className="h-3.5 w-3.5" />
         </a>
       </div>
-      <p className="mobile-home-hero-services">Air freight · Sea freight · China logistics</p>
     </section>
   )
 }
