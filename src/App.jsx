@@ -157,19 +157,6 @@ function normalizePath(path) {
   return validPaths.has(path) ? path : '/'
 }
 
-function useMobileLayout() {
-  const [isMobile, setIsMobile] = useState(() => window.matchMedia('(max-width: 720px)').matches)
-
-  useEffect(() => {
-    const media = window.matchMedia('(max-width: 720px)')
-    const update = () => setIsMobile(media.matches)
-    media.addEventListener('change', update)
-    return () => media.removeEventListener('change', update)
-  }, [])
-
-  return isMobile
-}
-
 function navigateTo(href) {
   window.history.pushState({}, '', href)
   window.dispatchEvent(new PopStateEvent('popstate'))
@@ -236,35 +223,14 @@ function HomePage() {
 }
 
 function HomeHero() {
-  const isMobile = useMobileLayout()
-
-  if (!isMobile) {
-    return (
-      <div className="home-desktop-hero">
-        <ScrollLockedVideoHero
-          videoSrc="/gateway-opens.mp4"
-          posterSrc="/gateway-opens-poster.jpg"
-          eyebrow="Sky Handlers Logistics / Hong Kong"
-          title="The world opens"
-          tagline="Your gateway to Hong Kong, China and the world."
-        />
-      </div>
-    )
-  }
-
   return (
-    <section className="mobile-home-hero">
-      <img src="/gateway-opens-poster.jpg" alt="Cargo gateway doors" />
-      <div className="mobile-home-hero-shade" />
-      <div className="mobile-home-hero-content">
-        <p className="eyebrow text-acid">International freight coordination</p>
-        <h1 className="serif-display">One partner.<br />Every shipment.</h1>
-        <p>Air freight, sea freight and China logistics, coordinated from origin to destination.</p>
-        <a href="/contact" onClick={(event) => { event.preventDefault(); navigateTo('/contact') }} className="focus-ring touchable inline-flex items-center gap-2 rounded-lg bg-acid px-4 py-3 text-[10px] font-bold uppercase tracking-[0.14em] text-ink">
-          Request a quotation <ArrowRight className="h-3.5 w-3.5" />
-        </a>
-      </div>
-    </section>
+    <ScrollLockedVideoHero
+      videoSrc="/gateway-opens.mp4"
+      posterSrc="/gateway-opens-poster.jpg"
+      eyebrow="Sky Handlers Logistics / Hong Kong"
+      title="The world opens"
+      tagline="Your gateway to Hong Kong, China and the world."
+    />
   )
 }
 
