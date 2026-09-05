@@ -21,38 +21,38 @@ import {
 
 const nav = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/freight', label: 'Air & Sea' },
-  { href: '/china-logistics', label: 'HK & China' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/about', label: 'About Us' },
+  { href: '/freight', label: 'Air & Sea Freight' },
+  { href: '/china-logistics', label: 'Hong Kong & China Logistics' },
+  { href: '/contact', label: 'Contact Us' },
 ]
 
 const pageSeo = {
   '/': {
-    title: 'Sky Handlers Logistics | Hong Kong & China Freight Forwarding',
-    description: 'Air freight, sea freight, warehousing, customs clearance and China logistics coordinated from Hong Kong to destinations worldwide.',
+    title: 'Your Logistics Gateway to Hong Kong, China & the World',
+    description: 'Freight Forwarding & Logistics Solutions Connecting Asia to Global Markets',
   },
   '/about': {
-    title: 'About Sky Handlers Logistics | Hong Kong Freight Partner',
-    description: 'Meet the Hong Kong logistics partner coordinating freight, warehousing, customs and cargo movement across China and global markets.',
+    title: 'About SKY HANDLERS LOGISTICS LIMITED Hong Kong',
+    description: 'Local Expertise. Regional Connectivity. Global Reach.',
   },
   '/freight': {
-    title: 'Air & Sea Freight from Hong Kong and China | Sky Handlers',
-    description: 'International air and sea freight for urgent, high-value, consolidated, project and oversized cargo from Hong Kong and Mainland China.',
+    title: 'International Freight Solutions from Hong Kong & China',
+    description: 'Connecting Your Cargo to Global Markets',
   },
   '/china-logistics': {
-    title: 'Hong Kong & China Logistics Services | Sky Handlers',
-    description: 'Factory pickup, supplier collection, cross-border transport, warehousing, customs clearance and export handling across Hong Kong and China.',
+    title: 'More Than Freight Forwarding',
+    description: 'Complete Logistics Support Across Hong Kong & Mainland China',
   },
   '/contact': {
-    title: 'Request a Freight Quote | Sky Handlers Logistics',
-    description: 'Contact Sky Handlers Logistics for a tailored air freight, sea freight, warehousing, customs or China logistics quotation.',
+    title: "Let's Move Your Cargo",
+    description: 'Talk to SKY HANDLERS LOGISTICS LIMITED Hong Kong',
   },
 }
 
 const validPaths = new Set(nav.map((item) => item.href))
 const network = ['Hong Kong', 'Dubai', 'Mumbai', 'Istanbul', 'Jeddah', 'Bangkok']
-const freightFactors = ['Cargo type', 'Weight', 'Volume', 'Urgency', 'Destination', 'Budget', 'Special handling']
+const freightFactors = ['Cargo Type', 'Weight', 'Volume', 'Urgency', 'Destination', 'Budget', 'Special Handling Requirements']
 
 const featuredServices = [
   {
@@ -61,8 +61,11 @@ const featuredServices = [
     href: '/freight',
     image: '/air-freight.jpg',
     icon: Plane,
-    label: 'Time-critical cargo',
-    text: 'Flexible air freight from and to Hong Kong and Mainland China, including express, general, Dangerous Goods and special cargo.',
+    label: 'Air Freight',
+    text: 'Flexible air freight solutions for shipments from and to Hong Kong and Mainland China, connecting businesses with major international destinations.',
+    items: ['Airport-to-Airport', 'Door-to-Airport', 'Airport-to-Door', 'Door-to-Door', 'Import & Export Air Freight', 'Consolidation Services', 'Express & Time-Critical Cargo', 'General Cargo', 'Dangerous Goods', 'Special Cargo'],
+    cta: 'EXPLORE AIR FREIGHT →',
+    itemsLabel: 'Our services can include:',
   },
   {
     no: '02',
@@ -70,8 +73,11 @@ const featuredServices = [
     href: '/freight',
     image: '/sea-freight.jpg',
     icon: Ship,
-    label: 'Capacity at scale',
-    text: 'FCL, LCL, consolidation and project cargo solutions through Hong Kong and major Chinese ports.',
+    label: 'Sea Freight',
+    text: 'Cost-effective ocean freight solutions connecting Hong Kong and major ports across Mainland China with destinations worldwide.',
+    items: ['Full Container Load (FCL)', 'Less than Container Load (LCL)', 'Import & Export', 'Port-to-Port', 'Door-to-Port', 'Port-to-Door', 'Door-to-Door', 'Consolidation', 'Special & Project Cargo'],
+    cta: 'EXPLORE SEA FREIGHT →',
+    itemsLabel: 'Solutions include:',
   },
   {
     no: '03',
@@ -79,19 +85,20 @@ const featuredServices = [
     href: '/china-logistics',
     image: '/china-logistics.jpg',
     icon: Route,
-    label: 'Origin to gateway',
-    text: 'Supplier collection, factory pickup, cross-border transport, customs support, warehousing and distribution.',
+    label: 'Hong Kong & China Logistics',
+    text: 'Our regional capabilities support cargo movement between Hong Kong and Mainland China through coordinated local transportation, customs support, warehousing and distribution.',
+    cta: 'EXPLORE HK & CHINA SOLUTIONS →',
   },
 ]
 
 const supportServices = [
-  ['Warehousing', Warehouse, 'Storage, receiving, consolidation, packing and distribution support.'],
-  ['Customs Clearance', ShieldCheck, 'Import and export documentation, permits and cargo release coordination.'],
-  ['Dangerous Goods', Boxes, 'Assessment, packing, marking, carrier coordination and regulated handling.'],
+  ['Warehousing', Warehouse, 'Flexible warehousing and cargo handling solutions supporting storage, consolidation, distribution and inventory requirements.'],
+  ['Customs Clearance', ShieldCheck, 'Professional coordination of import and export clearance, documentation and regulatory requirements in Hong Kong and Mainland China.'],
+  ['Dangerous Goods', Boxes, 'Specialized logistics support for Dangerous Goods shipments requiring appropriate documentation, handling, packaging coordination and regulatory compliance.'],
 ]
 
 const airServices = ['International Air Freight', 'Import & Export', 'Airport-to-Airport', 'Door-to-Airport', 'Airport-to-Door', 'Door-to-Door', 'Air Freight Consolidation', 'Express Cargo', 'Time-Critical Shipments', 'General Cargo', 'Dangerous Goods', 'Special Cargo', 'High-Value Cargo']
-const seaServices = ['Full Container Load — FCL', 'Less than Container Load — LCL', 'Import & Export', 'Port-to-Port', 'Door-to-Port', 'Port-to-Door', 'Door-to-Door', 'Cargo Consolidation', 'Containerized Cargo', 'Special Cargo', 'Project Cargo', 'Oversized Cargo']
+const seaServices = ['FCL', 'LCL', 'Import & Export', 'Port-to-Port', 'Door-to-Port', 'Port-to-Door', 'Door-to-Door', 'Cargo Consolidation', 'Containerized Cargo', 'Special Cargo', 'Project Cargo', 'Oversized Cargo']
 const originServices = ['Factory pickup', 'Supplier coordination', 'Trucking', 'Cargo consolidation', 'Warehousing', 'Packing coordination', 'Documentation', 'Customs clearance', 'Export handling', 'International sea freight']
 const localServices = ['Factory Pickup', 'Supplier Collection', 'Airport Pickup & Delivery', 'Port Pickup & Delivery', 'Warehouse Transfers', 'Commercial Cargo Delivery', 'Cross-Border Transportation', 'Last-Mile Commercial Delivery']
 const warehousing = ['Short-Term Storage', 'Long-Term Storage', 'Cargo Receiving', 'Cargo Consolidation', 'Deconsolidation', 'Inventory Handling', 'Sorting', 'Labelling', 'Packing & Repacking', 'Palletization', 'Cargo Preparation', 'Distribution']
@@ -183,8 +190,8 @@ function Header({ path, go, menuOpen, setMenuOpen }) {
         <a href="/" onClick={go('/')} className="focus-ring flex items-center gap-3">
           <span className="brand-mark">SH</span>
           <span>
-            <strong className="block text-[11px] uppercase tracking-[0.15em] text-ink">Sky Handlers</strong>
-            <span className="mt-0.5 block text-[8px] uppercase tracking-[0.18em] text-ink/45">Logistics Limited</span>
+            <strong className="block text-[11px] uppercase tracking-[0.15em] text-ink">SKY HANDLERS</strong>
+            <span className="mt-0.5 block text-[8px] uppercase tracking-[0.18em] text-ink/45">LOGISTICS LIMITED</span>
           </span>
         </a>
 
@@ -197,7 +204,7 @@ function Header({ path, go, menuOpen, setMenuOpen }) {
         </nav>
 
         <a href="/contact" onClick={go('/contact')} className="focus-ring touchable ml-auto hidden items-center gap-2 rounded-lg bg-acid px-4 py-3 text-[9px] font-bold uppercase tracking-[0.14em] text-ink lg:inline-flex">
-          Get a quotation <ArrowUpRight className="h-3.5 w-3.5" />
+          Request a Quote <ArrowUpRight className="h-3.5 w-3.5" />
         </a>
         <button aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)} className="focus-ring touchable ml-auto grid h-10 w-10 place-items-center rounded-lg bg-ink text-white lg:hidden">
           {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
@@ -217,20 +224,33 @@ function HomePage() {
   return (
     <>
       <HomeHero />
+      <EditorialIntro
+        title="Freight Forwarding & Logistics Solutions Connecting Asia to Global Markets"
+        paragraphs={[
+          "Strategically positioned in one of Asia's most important logistics hubs, SKY HANDLERS LOGISTICS LIMITED provides reliable freight forwarding and logistics solutions for businesses moving cargo to and from Hong Kong, Mainland China and international markets.",
+          "From air and sea freight to local transportation, warehousing, customs clearance and Dangerous Goods handling, our team coordinates your cargo requirements through one reliable logistics network.",
+        ]}
+      />
       <CapabilityBar />
       <EditorialIntro
-        eyebrow="About Sky Handlers"
-        title="One logistics partner from supplier collection to international departure."
-        text="Sky Handlers combines local knowledge, regional capability and an international network for businesses importing, exporting and distributing cargo."
+        eyebrow="Connecting Hong Kong & China to Global Markets"
+        title="Hong Kong is a major gateway between Mainland China and the international market."
+        paragraphs={[
+          "SKY HANDLERS LOGISTICS LIMITED Hong Kong combines local knowledge, regional capabilities and the international network of SKY HANDLERS LOGISTICS LIMITED to support companies importing, exporting and distributing cargo throughout Hong Kong, Mainland China and overseas destinations.",
+          "Whether you are moving an urgent air shipment, full container, consolidated cargo or specialized goods, our team works with you to identify the appropriate logistics solution for your requirements.",
+        ]}
       />
       <FeaturedServices />
-      <Process
-        eyebrow="A coordinated route"
-        title="From factory floor to global departure."
-        steps={['Supplier collection', 'Origin transport', 'Warehousing & consolidation', 'Export clearance', 'Air or sea freight', 'Destination handling']}
-      />
       <SupportServices />
-      <CTA title="Tell us what needs to move." text="Share the origin, destination, cargo type and timing. We will help shape the right logistics solution." />
+      <Process
+        eyebrow="One Logistics Partner. Multiple Solutions."
+        title="Every shipment is different."
+        paragraphs={[
+          "Our role is not simply to move cargo from one location to another. We work with customers to understand the complete logistics requirement and coordinate the right combination of freight, clearance, transportation, warehousing and distribution services.",
+          "SKY HANDLERS LOGISTICS LIMITED. Multiple Solutions. One Client.",
+        ]}
+      />
+      <CTA title="From Asia to the World" paragraphs={["Whether your cargo originates from Hong Kong, Shenzhen, Guangzhou, Dongguan or other major manufacturing and commercial centers across China, SKY HANDLERS LOGISTICS LIMITED can coordinate its movement through our logistics network."]} buttonLabel="TALK TO OUR HONG KONG TEAM" />
     </>
   )
 }
@@ -244,9 +264,9 @@ function HomeHero() {
         <ScrollLockedVideoHero
           videoSrc="/gateway-opens.mp4"
           posterSrc="/gateway-opens-poster.jpg"
-          eyebrow="Sky Handlers Logistics / Hong Kong"
-          title="The world opens"
-          tagline="Your gateway to Hong Kong, China and the world."
+          eyebrow="Freight Forwarding & Logistics Solutions"
+          title="Your Logistics Gateway to Hong Kong, China & the World"
+          tagline="Connecting Asia to Global Markets"
         />
       </div>
     )
@@ -257,11 +277,11 @@ function HomeHero() {
       <img src="/gateway-opens-poster.jpg" alt="Cargo gateway doors" />
       <div className="mobile-home-hero-shade" />
       <div className="mobile-home-hero-content">
-        <p className="eyebrow text-acid">International freight coordination</p>
-        <h1 className="serif-display">One partner.<br />Every shipment.</h1>
-        <p>Air freight, sea freight and China logistics, coordinated from origin to destination.</p>
+        <p className="eyebrow text-acid">Freight Forwarding & Logistics Solutions</p>
+        <h1 className="serif-display">Your Logistics Gateway to Hong Kong, China & the World</h1>
+        <p>Connecting Asia to Global Markets</p>
         <a href="/contact" onClick={(event) => { event.preventDefault(); navigateTo('/contact') }} className="focus-ring touchable inline-flex items-center gap-2 rounded-lg bg-acid px-4 py-3 text-[10px] font-bold uppercase tracking-[0.14em] text-ink">
-          Request a quotation <ArrowRight className="h-3.5 w-3.5" />
+          REQUEST A QUOTE <ArrowRight className="h-3.5 w-3.5" />
         </a>
       </div>
     </section>
@@ -270,23 +290,25 @@ function HomeHero() {
 
 function CapabilityBar() {
   return (
-    <div className="mx-4 rounded-2xl bg-[#f4f4f1] px-5 py-6 lg:mx-9 lg:px-8">
-      <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-4">
-        <span className="eyebrow text-ink/45">One coordinated partner</span>
-        {['Air freight', 'Sea freight', 'China logistics', 'Warehousing', 'Customs', 'Dangerous goods'].map((item) => <span key={item} className="flex items-center gap-2 text-[10px] font-semibold text-ink/58"><span className="h-1.5 w-1.5 rounded-full bg-blue/45" />{item}</span>)}
+    <section className="mx-4 overflow-hidden rounded-[20px] bg-ink px-5 py-6 text-white lg:mx-9 lg:px-8 lg:py-7">
+      <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-4">
+        <div className="grid flex-1 grid-cols-2 gap-x-5 gap-y-4 sm:grid-cols-4 lg:grid-cols-7">
+          {['Air Freight', 'Sea Freight', 'China Logistics', 'Hong Kong Local Services', 'Warehousing', 'Customs Clearance', 'Dangerous Goods'].map((item) => <span key={item} className="flex items-center gap-2 text-[11px] font-semibold leading-5 text-white/75 lg:text-xs"><span className="h-1.5 w-1.5 shrink-0 rounded-full bg-acid/75" />{item}</span>)}
+        </div>
+        <LinkButton href="/contact" className="min-h-9 px-3 text-[8px]">REQUEST A QUOTE</LinkButton>
       </div>
-    </div>
+    </section>
   )
 }
 
-function EditorialIntro({ eyebrow, title, text }) {
+function EditorialIntro({ eyebrow, title, text, paragraphs }) {
   return (
     <section className="content-shell py-24 lg:py-36">
       <Reveal className="grid gap-10 lg:grid-cols-[0.55fr_1.45fr]">
-        <p className="eyebrow text-ink/45">+ {eyebrow}</p>
+        {eyebrow && <p className="eyebrow text-ink/45">+ {eyebrow}</p>}
         <div>
           <h2 className="serif-display max-w-5xl text-[clamp(2.7rem,5.4vw,5.6rem)] leading-[0.94] tracking-[-0.055em]">{title}</h2>
-          <p className="mt-7 max-w-2xl text-base leading-8 text-muted">{text}</p>
+          {paragraphs ? <div className="mt-7 max-w-2xl space-y-5 text-base leading-8 text-muted">{paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div> : <p className="mt-7 max-w-2xl text-base leading-8 text-muted">{text}</p>}
         </div>
       </Reveal>
     </section>
@@ -296,7 +318,7 @@ function EditorialIntro({ eyebrow, title, text }) {
 function FeaturedServices() {
   return (
     <section className="content-shell pb-24 lg:pb-36">
-      <SectionHeading eyebrow="Core services" title="Designed around the shipment, not a template." />
+      <SectionHeading title="Our Core Services" />
       <div className="mt-12 grid gap-5 lg:grid-cols-12">
         {featuredServices.map((service, index) => <ServiceFeature key={service.title} service={service} index={index} />)}
       </div>
@@ -323,6 +345,8 @@ function ServiceFeature({ service, index }) {
             </div>
             <h3 className="serif-display mt-12 text-4xl tracking-[-0.045em] lg:text-5xl">{service.title}</h3>
             <p className="mt-4 max-w-md text-sm leading-7 text-muted">{service.text}</p>
+            {service.items && <><p className="mt-6 text-xs font-semibold text-ink">{service.itemsLabel}</p><div className="mt-2 flex flex-wrap gap-2">{service.items.map((item) => <span key={item} className="rounded-full border border-ink/12 bg-white/65 px-3 py-2 text-[9px] font-semibold text-ink/65">{item}</span>)}</div></>}
+            {service.cta && <p className="mt-6 text-[9px] font-bold uppercase tracking-[0.14em] text-blue">{service.cta}</p>}
           </div>
         </div>
       </a>
@@ -332,9 +356,8 @@ function ServiceFeature({ service, index }) {
 
 function SupportServices() {
   return (
-    <section className="content-shell py-24 lg:py-32">
-      <SectionHeading eyebrow="Supporting operations" title="The work around the freight matters." />
-      <div className="mt-12 grid gap-4 lg:grid-cols-3">
+    <section className="content-shell pt-12 pb-24 lg:pt-20 lg:pb-32">
+      <div className="grid gap-4 lg:grid-cols-3">
         {supportServices.map(([title, Icon, text], index) => (
           <Reveal key={title} delay={index * 0.05} className="rounded-[22px] border border-ink/10 bg-[#f4f4f1] p-6 lg:min-h-[275px] lg:p-8">
             <div className="flex items-center justify-between"><span className="eyebrow text-blue">0{index + 4}</span><Icon className="h-6 w-6 text-ink/35" strokeWidth={1.4} /></div>
@@ -352,17 +375,22 @@ function AboutPage() {
     <>
       <PageHero
         index="01"
-        eyebrow="Company / Hong Kong"
-        title="Local knowledge. Global coordination."
-        text="Sky Handlers brings the individual parts of a shipment together through one logistics partner."
+        eyebrow="About Us"
+        title="About SKY HANDLERS LOGISTICS LIMITED Hong Kong"
+        subtitle="Local Expertise. Regional Connectivity. Global Reach."
+        paragraphs={[
+          "SKY HANDLERS LOGISTICS LIMITED is a Hong Kong-based freight forwarding and logistics company providing transportation and supply chain solutions across Hong Kong, Mainland China and international markets.",
+          "Our strategic location in Hong Kong places us at the center of one of Asia's most important trading regions and provides direct access to Mainland China's extensive manufacturing and commercial network.",
+          "We support businesses with international freight forwarding and the local services required before and after transportation, providing customers with a coordinated approach to their logistics requirements.",
+        ]}
         image="/hero-logistics.png"
         imageAlt="Hong Kong cargo gateway"
       />
-      <EditorialIntro eyebrow="A coordinated approach" title="Logistics works when every handoff is understood." text="A shipment may require supplier collection, transport, warehousing, consolidation, export clearance, international freight, destination clearance and final delivery. We coordinate those elements as one route." />
-      <Process eyebrow="Hong Kong + Mainland China" title="Capability across the complete origin journey." steps={['Supplier cargo collection', 'Factory pickup', 'Cross-border transportation', 'Cargo consolidation', 'Warehousing', 'Export preparation', 'Customs clearance', 'International distribution']} />
+      <EditorialIntro eyebrow="Our Approach" title="Logistics is rarely about one service." paragraphs={["A shipment may require collection from a supplier in China, transportation to a warehouse, consolidation, export clearance, international freight, destination clearance and final delivery.", "SKY HANDLERS LOGISTICS LIMITED brings these elements together.", "Our team coordinates the different stages of the shipment, helping customers manage their supply chain through a single logistics partner."]} />
+      <Process eyebrow="Hong Kong + Mainland China" title="Our solutions can support:" paragraphs={["Our regional capabilities allow us to support customers requiring cargo movement across:", "Hong Kong and major commercial and manufacturing areas across Mainland China including the Greater Bay Area and major logistics gateways throughout China."]} steps={['Supplier cargo collection', 'Factory pickup', 'Cross-border transportation', 'Cargo consolidation', 'Warehousing', 'Export preparation', 'Customs clearance', 'Air freight', 'Sea freight', 'International distribution']} />
       <NetworkSection />
       <ReasonSection />
-      <CTA title="One team across the handoffs." text="Bring us the complete requirement—not just one booking—and we will help coordinate the route." />
+      <CTA title="Our Commitment" paragraphs={["We aim to build long-term logistics partnerships by providing responsive communication, practical solutions and reliable shipment coordination."]} buttonLabel="DISCOVER OUR SERVICES" />
     </>
   )
 }
@@ -372,23 +400,26 @@ function FreightPage() {
     <>
       <PageHero
         index="02"
-        eyebrow="Air / Sea Freight"
-        title="Speed when it matters. Scale when it counts."
-        text="International freight from Hong Kong and Mainland China, designed around cargo, timing and destination."
+        eyebrow="Air & Sea Freight"
+        title="International Freight Solutions from Hong Kong & China"
+        subtitle="Connecting Your Cargo to Global Markets"
+        paragraphs={[
+          "Whether speed, capacity or cost is the priority, SKY HANDLERS LOGISTICS LIMITED Hong Kong provides air and sea freight solutions designed around your shipment requirements.",
+          "Our team coordinates cargo originating from Hong Kong and Mainland China as well as imports arriving into the region.",
+        ]}
         image="/air-freight.jpg"
         imageAlt="Cargo being loaded into a freighter aircraft"
         secondaryImage="/sea-freight.jpg"
       />
       <FreightModes />
+      <IndexedList eyebrow="" title="Origin Services in China" intro="We can coordinate cargo originating from different suppliers and locations across China." itemsLabel="Services may include:" items={originServices} />
       <DecisionSection />
-      <Process eyebrow="Air freight from China" title="A clear sequence from supplier to destination." steps={['Supplier pickup', 'Local transportation', 'Warehousing / consolidation', 'Export clearance', 'Air freight', 'Destination handling']} />
-      <IndexedList eyebrow="Origin services in China" title="Prepared before international movement." items={originServices} />
-      <CTA title="Not sure whether to ship by air or sea?" text="We assess urgency, cargo profile, budget, destination and handling requirements before recommending the route." />
+      <CTA title="Not Sure Whether to Ship by Air or Sea?" paragraphs={["Our team can assess your shipment based on:", "Cargo Type | Weight | Volume | Urgency | Destination | Budget | Special Handling Requirements", "We can then recommend an appropriate routing and transportation solution."]} buttonLabel="REQUEST A FREIGHT QUOTE" />
     </>
   )
 }
 
-function PageHero({ index, eyebrow, title, text, image, imageAlt, secondaryImage }) {
+function PageHero({ index, eyebrow, title, subtitle, text, paragraphs, image, imageAlt, secondaryImage }) {
   const reduceMotion = useReducedMotion()
   return (
     <section className="hero-wrap">
@@ -402,9 +433,10 @@ function PageHero({ index, eyebrow, title, text, image, imageAlt, secondaryImage
           <Reveal>
             <p className="eyebrow text-white/65"><span className="text-acid">{index}</span> / {eyebrow}</p>
             <h1 className="serif-display mt-8 max-w-5xl text-[clamp(3.7rem,7.7vw,7.8rem)] leading-[0.84] tracking-[-0.065em]">{title}</h1>
+            {subtitle && <p className="mt-7 max-w-2xl text-xl font-semibold leading-7 text-white/85 lg:text-2xl">{subtitle}</p>}
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="max-w-xl border-l border-acid pl-5 text-base leading-7 text-white/75 lg:text-lg lg:leading-8">{text}</p>
+            {(paragraphs || text) && <div className="max-w-xl space-y-4 border-l border-acid pl-5 text-base leading-7 text-white/75 lg:text-lg lg:leading-8">{paragraphs ? paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>) : <p>{text}</p>}</div>}
           </Reveal>
         </div>
       </div>
@@ -414,17 +446,25 @@ function PageHero({ index, eyebrow, title, text, image, imageAlt, secondaryImage
 
 function FreightModes() {
   return (
-    <section className="content-shell py-24 lg:py-36">
-      <SectionHeading eyebrow="Two modes. One requirement." title="Choose for speed, capacity and handling." />
-      <div className="mt-12 grid gap-6 lg:grid-cols-2">
-        <FreightCard no="01" title="Air Freight" label="Time-critical / high-value" image="/air-freight.jpg" icon={Plane} text="For urgent, high-value, time-sensitive or specialized shipments through Hong Kong and key airports across Mainland China." items={airServices} />
-        <FreightCard no="02" title="Sea Freight" label="Capacity / cost efficiency" image="/sea-freight.jpg" icon={Ship} text="For larger shipments where capacity and cost efficiency are the priority, through Hong Kong and major Chinese ports." items={seaServices} />
-      </div>
-    </section>
+    <>
+      <section className="content-shell py-24 lg:py-36">
+        <SectionHeading title="Air Freight" />
+        <div className="mt-12">
+          <FreightCard no="01" title="Air Freight from & to Hong Kong and China" label="Air Freight" image="/air-freight.jpg" icon={Plane} text="For urgent, high-value, time-sensitive or specialized shipments, our air freight solutions provide access to major international destinations through Hong Kong and key airports across Mainland China." itemsLabel="Our Air Freight Services" items={airServices} />
+        </div>
+      </section>
+      <Process eyebrow="Air Freight from China" title="Need to collect cargo directly from your supplier or factory?" paragraphs={["SKY HANDLERS LOGISTICS LIMITED can coordinate cargo collection from locations across Mainland China and arrange transportation to the appropriate airport or logistics facility for international export.", "Depending on your requirements, we can coordinate:", "Supplier Pickup → Local Transportation → Warehousing/Consolidation → Export Clearance → Air Freight → Destination Handling", "This gives customers a single logistics partner from origin through international transportation."]} steps={['Supplier Pickup', 'Local Transportation', 'Warehousing/Consolidation', 'Export Clearance', 'Air Freight', 'Destination Handling']} />
+      <section className="content-shell py-24 lg:py-36">
+        <SectionHeading title="Sea Freight" />
+        <div className="mt-12">
+          <FreightCard no="02" title="Sea Freight" subtitle="Flexible Ocean Freight Solutions" label="Sea Freight" image="/sea-freight.jpg" icon={Ship} text="For larger shipments or cargo where cost efficiency is a priority, SKY HANDLERS LOGISTICS LIMITED provides sea freight solutions connecting Hong Kong and major Chinese ports with international destinations." highlights={[["Full Container Load — FCL", "Dedicated container solutions for larger cargo volumes, including standard and specialized container requirements."], ["Less than Container Load — LCL", "Consolidation solutions for customers who do not require a full container, allowing smaller shipments to share container capacity."]]} itemsLabel="Our Sea Freight Services" items={seaServices} />
+        </div>
+      </section>
+    </>
   )
 }
 
-function FreightCard({ no, title, label, image, icon: Icon, text, items }) {
+function FreightCard({ no, title, subtitle, label, image, icon: Icon, text, highlights, itemsLabel, items }) {
   return (
     <Reveal className="overflow-hidden rounded-[24px] border border-ink/10 bg-[#f4f4f1]">
       <div className="image-zoom relative aspect-[16/9] overflow-hidden">
@@ -435,8 +475,11 @@ function FreightCard({ no, title, label, image, icon: Icon, text, items }) {
       <div className="p-6 lg:p-8">
         <span className="eyebrow text-blue">{no}</span>
         <h2 className="serif-display mt-4 text-5xl tracking-[-0.05em]">{title}</h2>
+        {subtitle && <h3 className="mt-4 text-xl font-semibold">{subtitle}</h3>}
         <p className="mt-5 max-w-xl text-sm leading-7 text-muted">{text}</p>
-        <div className="mt-8 grid gap-x-5 border-t border-ink/12 sm:grid-cols-2">
+        {highlights && <div className="mt-7 space-y-5">{highlights.map(([heading, description]) => <div key={heading}><h3 className="text-sm font-semibold">{heading}</h3><p className="mt-2 text-sm leading-7 text-muted">{description}</p></div>)}</div>}
+        {itemsLabel && <p className="mt-8 border-t border-ink/12 pt-6 text-xs font-semibold text-ink">{itemsLabel}</p>}
+        <div className="mt-2 grid gap-x-5 border-t border-ink/12 sm:grid-cols-2">
           {items.map((item) => <span key={item} className="flex items-center gap-2 border-b border-ink/10 py-3 text-[11px] font-semibold text-ink/75"><Check className="h-3 w-3 text-blue" />{item}</span>)}
         </div>
       </div>
@@ -448,7 +491,7 @@ function DecisionSection() {
   return (
     <section className="mx-4 rounded-[26px] bg-blue px-5 py-20 text-white lg:mx-9 lg:px-10 lg:py-24">
       <div className="mx-auto grid max-w-[1260px] gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-        <SectionHeading eyebrow="Mode selection" title="The right answer depends on the shipment." light />
+        <SectionHeading title="Not Sure Whether to Ship by Air or Sea?" light />
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
           {freightFactors.map((factor, index) => <Reveal key={factor} delay={index * 0.035} className="rounded-2xl bg-white/12 p-5 backdrop-blur"><span className="text-[8px] font-bold tracking-[0.16em] text-acid">0{index + 1}</span><p className="mt-9 text-sm font-semibold">{factor}</p></Reveal>)}
         </div>
@@ -460,34 +503,37 @@ function DecisionSection() {
 function ChinaLogisticsPage() {
   return (
     <>
-      <PageHero index="03" eyebrow="Hong Kong / Mainland China" title="The route before the route." text="Complete logistics support before departure, during transit and after arrival." image="/china-logistics.jpg" imageAlt="South China cargo consolidation warehouse and truck" />
-      <EditorialIntro eyebrow="More than freight forwarding" title="International movement starts long before the aircraft or vessel." text="We coordinate the supporting logistics services that keep cargo moving between factories, suppliers, warehouses, airports and ports." />
+      <PageHero index="03" eyebrow="Hong Kong & China Logistics Solutions" title="More Than Freight Forwarding" subtitle="Complete Logistics Support Across Hong Kong & Mainland China" paragraphs={["Moving cargo internationally often involves much more than booking an aircraft or container.", "SKY HANDLERS LOGISTICS LIMITED Hong Kong provides supporting logistics services that help customers manage cargo before departure, during transit and after arrival."]} image="/china-logistics.jpg" imageAlt="South China cargo consolidation warehouse and truck" />
       <OperationsPair />
-      <Process eyebrow="China to Hong Kong" title="A coordinated cross-border movement." steps={['Factory in China', 'Cargo collection', 'Cross-border transportation', 'Hong Kong warehouse / terminal', 'Consolidation & documentation', 'Air or sea freight', 'International destination']} />
+      <Process eyebrow="China–Hong Kong Cross-Border Logistics" title="A typical movement may include:" paragraphs={["Hong Kong's proximity to Mainland China's major manufacturing regions makes it an important gateway for international trade.", "SKY HANDLERS LOGISTICS LIMITED can coordinate cargo movements between Mainland China and Hong Kong, supporting customers requiring cross-border collection, consolidation, clearance and onward international transportation."]} steps={['Factory in China', 'Cargo Collection', 'Cross-Border Transportation', 'Hong Kong Warehouse / Cargo Terminal', 'Consolidation & Documentation', 'Air or Sea Freight', 'International Destination']} />
+      <OperationsPair warehouse />
       <CompliancePair />
-      <CTA title="Multiple suppliers. One international shipment." text="Cargo from Supplier A, B and C can be collected, consolidated and prepared as one coordinated movement." />
+      <EditorialIntro eyebrow="Cargo Consolidation" title="Consolidate Multiple Suppliers into One Shipment" paragraphs={["For customers purchasing products from several suppliers across China, SKY HANDLERS LOGISTICS LIMITED can coordinate cargo collection and consolidation before international shipment.", "Instead of managing multiple shipments separately, cargo can be collected from different suppliers, brought to a designated facility and prepared for consolidated export.", "This can help customers simplify their logistics operations and potentially optimize transportation costs.", "Supplier A + Supplier B + Supplier C → Consolidation → One International Shipment"]} />
+      <CTA title="One Partner Across the Supply Chain" paragraphs={["From factory collection in China to final international transportation, our objective is to simplify the logistics process.", "Collection → Transportation → Warehousing → Consolidation → Clearance → International Freight → Destination"]} buttonLabel="DISCUSS YOUR LOGISTICS REQUIREMENTS" />
     </>
   )
 }
 
-function OperationsPair() {
+function OperationsPair({ warehouse = false }) {
   return (
     <section className="content-shell pb-24 lg:pb-36">
       <div className="grid gap-6 lg:grid-cols-2">
-        <OperationCard no="01" title="Local Transportation" icon={Truck} text="Cargo collection and delivery within Hong Kong and Mainland China, including factories, suppliers, warehouses, airports and ports." items={localServices} />
-        <OperationCard no="02" title="Warehousing" icon={Warehouse} text="Flexible cargo handling for temporary storage, consolidation, distribution and inventory requirements." items={warehousing} accent />
+        {!warehouse && <OperationCard no="01" title="Local Transportation" subtitle="Cargo Collection & Delivery" icon={Truck} text="We coordinate local cargo transportation within Hong Kong and Mainland China, including pickup from factories, suppliers, warehouses, airports and ports." itemsLabel="Services can include:" items={localServices} />}
+        {warehouse && <OperationCard no="02" title="Warehousing" subtitle="Flexible Warehousing & Cargo Handling" icon={Warehouse} paragraphs={["Our warehousing solutions support customers who require temporary or longer-term storage as part of their logistics operations.", "Warehousing can be integrated with our freight forwarding and local transportation services to provide a more complete logistics solution."]} itemsLabel="Services can include:" items={warehousing} accent />}
       </div>
     </section>
   )
 }
 
-function OperationCard({ no, title, icon: Icon, text, items, accent = false }) {
+function OperationCard({ no, title, subtitle, icon: Icon, text, paragraphs, itemsLabel, items, accent = false }) {
   return (
     <Reveal className={'rounded-[24px] p-6 lg:p-8 ' + (accent ? 'bg-[#dce9eb]' : 'bg-[#f4f4f1]')}>
       <div className="flex items-center justify-between"><span className="eyebrow text-blue">{no}</span><Icon className="h-6 w-6 text-ink/40" strokeWidth={1.4} /></div>
       <h2 className="serif-display mt-14 text-5xl tracking-[-0.05em]">{title}</h2>
-      <p className="mt-5 max-w-xl text-sm leading-7 text-muted">{text}</p>
-      <div className="mt-8 grid gap-x-5 border-t border-ink/12 sm:grid-cols-2">
+      {subtitle && <h3 className="mt-4 text-lg font-semibold">{subtitle}</h3>}
+      {paragraphs ? <div className="mt-5 max-w-xl space-y-4 text-sm leading-7 text-muted">{paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div> : <p className="mt-5 max-w-xl text-sm leading-7 text-muted">{text}</p>}
+      {itemsLabel && <p className="mt-8 border-t border-ink/12 pt-6 text-xs font-semibold text-ink">{itemsLabel}</p>}
+      <div className="mt-2 grid gap-x-5 border-t border-ink/12 sm:grid-cols-2">
         {items.map((item) => <span key={item} className="border-b border-ink/10 py-3 text-[11px] font-semibold text-ink/72">{item}</span>)}
       </div>
     </Reveal>
@@ -497,32 +543,36 @@ function OperationCard({ no, title, icon: Icon, text, items, accent = false }) {
 function CompliancePair() {
   return (
     <section className="content-shell py-24 lg:py-36">
-      <SectionHeading eyebrow="Regulated movement" title="Documentation and handling stay connected." />
+      <SectionHeading title="Customs Clearance" />
       <div className="mt-12 grid gap-6 lg:grid-cols-2">
-        <TagCard icon={ShieldCheck} title="Customs Clearance" text="Import and export clearance support for cargo entering or leaving Hong Kong and Mainland China." items={clearance} />
-        <TagCard icon={PackageCheck} title="Dangerous Goods" text="Specialized handling subject to classification, carrier requirements and destination restrictions." items={dangerousGoods} />
+        <TagCard icon={ShieldCheck} title="Customs Clearance" subtitle="Import & Export Clearance Support" paragraphs={["Customs procedures can significantly affect the speed and efficiency of international shipments.", "Our team coordinates customs clearance and documentation requirements for cargo entering or leaving Hong Kong and Mainland China."]} itemsLabel="Services can include:" items={clearance} note="Our objective is to help customers prepare the correct documentation and reduce unnecessary delays during the clearance process." />
+        <TagCard icon={PackageCheck} title="Dangerous Goods Logistics" subtitle="Specialized Handling for Dangerous Goods" paragraphs={["Dangerous Goods require additional care, documentation and compliance throughout the transportation process.", "SKY HANDLERS LOGISTICS LIMITED provides logistics coordination for DG shipments in accordance with applicable transportation and regulatory requirements."]} itemsLabel="Our DG support can include:" items={dangerousGoods} note="Examples may include certain: Chemicals | Batteries | Industrial Materials | Automotive Products | Electronic Equipment | Other Regulated Cargo\nAcceptance remains subject to the cargo classification, applicable regulations, carrier requirements and destination restrictions." />
       </div>
     </section>
   )
 }
 
-function TagCard({ icon: Icon, title, text, items }) {
+function TagCard({ icon: Icon, title, subtitle, text, paragraphs, itemsLabel, items, note }) {
   return (
     <Reveal className="rounded-[24px] border border-ink/10 bg-[#f4f4f1] p-6 lg:p-8">
       <Icon className="h-7 w-7 text-blue" strokeWidth={1.4} />
       <h3 className="serif-display mt-10 text-4xl tracking-[-0.045em]">{title}</h3>
-      <p className="mt-4 text-sm leading-7 text-muted">{text}</p>
-      <div className="mt-7 flex flex-wrap gap-2">{items.map((item) => <span key={item} className="rounded-full border border-ink/12 bg-white/65 px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.07em] text-ink/65">{item}</span>)}</div>
+      {subtitle && <h4 className="mt-4 text-lg font-semibold">{subtitle}</h4>}
+      {paragraphs ? <div className="mt-4 space-y-4 text-sm leading-7 text-muted">{paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div> : <p className="mt-4 text-sm leading-7 text-muted">{text}</p>}
+      {itemsLabel && <p className="mt-7 text-xs font-semibold text-ink">{itemsLabel}</p>}
+      <div className="mt-3 flex flex-wrap gap-2">{items.map((item) => <span key={item} className="rounded-full border border-ink/12 bg-white/65 px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.07em] text-ink/65">{item}</span>)}</div>
+      {note && <div className="mt-6 space-y-3 text-sm leading-7 text-muted">{note.split('\n').map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>}
     </Reveal>
   )
 }
 
-function Process({ eyebrow, title, steps }) {
+function Process({ eyebrow, title, paragraphs, steps }) {
   return (
-    <section className="mx-4 rounded-[28px] bg-ink px-5 py-20 text-white lg:mx-9 lg:px-10 lg:py-24">
+    <section className="mx-4 mb-4 rounded-[28px] bg-ink px-5 py-20 text-white lg:mx-9 lg:px-10 lg:py-24">
       <div className="mx-auto max-w-[1260px]">
         <SectionHeading eyebrow={eyebrow} title={title} light />
-        <div className="mt-14 grid lg:grid-cols-4">
+        {paragraphs && <div className="mt-8 max-w-3xl space-y-4 text-sm leading-7 text-white/70">{paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>}
+        {steps && <div className="mt-14 grid lg:grid-cols-4">
           {steps.map((step, index) => (
             <Reveal key={step} delay={index * 0.045} className="relative border-l border-white/15 py-4 pl-5 lg:min-h-[155px] lg:border-l-0 lg:border-t lg:px-4 lg:pt-6">
               <span className="absolute -left-[4px] top-6 h-2 w-2 rounded-full bg-acid lg:-top-[4px] lg:left-4" />
@@ -531,7 +581,7 @@ function Process({ eyebrow, title, steps }) {
               {index < steps.length - 1 && <ChevronRight className="absolute right-2 top-6 hidden h-4 w-4 text-white/25 lg:block" />}
             </Reveal>
           ))}
-        </div>
+        </div>}
       </div>
     </section>
   )
@@ -541,7 +591,7 @@ function NetworkSection() {
   return (
     <section className="content-shell py-24 lg:py-36">
       <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
-        <div><SectionHeading eyebrow="International network" title="Regional presence. Connected execution." /><p className="mt-6 max-w-lg text-sm leading-7 text-muted">Branches across key trade and logistics hubs support wider international freight forwarding and destination coordination.</p></div>
+        <div><SectionHeading title="Our International Network" /><div className="mt-6 max-w-lg space-y-4 text-sm leading-7 text-muted"><p>SKY HANDLERS LOGISTICS LIMITED has an expanding international presence, with branches in Hong Kong, Dubai, Mumbai, Istanbul, Jeddah, and Bangkok, strategically positioned across key global trade and logistics hubs.</p><p>Our network enables us to coordinate cargo movements across multiple markets while providing local expertise and support at both origin and destination.</p><p>With our presence across Asia, the Middle East, India and Türkiye, supported by our wider global network, SKY HANDLERS LOGISTICS LIMITED delivers flexible logistics solutions tailored to the specific requirements of each shipment.</p></div></div>
         <Reveal className="relative min-h-[390px] overflow-hidden rounded-[26px] bg-[#dce9eb]">
           <div className="map-grid absolute inset-0" />
           <div className="absolute left-[8%] right-[8%] top-1/2 h-px rotate-6 bg-ink/20" />
@@ -549,7 +599,6 @@ function NetworkSection() {
             const positions = ['left-[10%] top-[28%]', 'left-[30%] top-[65%]', 'left-[48%] top-[40%]', 'left-[64%] top-[68%]', 'left-[77%] top-[32%]', 'left-[89%] top-[58%]']
             return <div key={city} className={'absolute -translate-x-1/2 -translate-y-1/2 ' + positions[index]}><span className="block h-3 w-3 rounded-full border-[3px] border-[#dce9eb] bg-blue shadow-[0_0_0_1px_rgba(17,32,37,.22)]" /><span className="mt-2 block whitespace-nowrap text-[8px] font-bold uppercase tracking-[0.13em]">{city}</span></div>
           })}
-          <span className="absolute bottom-4 right-4 text-[8px] uppercase tracking-[0.14em] text-ink/35">Network schematic / not to scale</span>
         </Reveal>
       </div>
     </section>
@@ -558,26 +607,26 @@ function NetworkSection() {
 
 function ReasonSection() {
   const reasons = [
-    ['Strategic location', 'Access to one of Asia’s established international trading and logistics hubs.'],
-    ['China connectivity', 'Regional capability across major commercial and manufacturing locations.'],
-    ['Multiple solutions', 'Air, sea, transport, warehousing, customs and specialized cargo.'],
-    ['Local knowledge', 'Operational understanding of movement across Hong Kong and Mainland China.'],
-    ['Global network', 'International forwarding capability and destination support.'],
+    ['Strategic Location', 'Operating from Hong Kong provides direct access to one of Asia\'s most established international trading and logistics hubs.'],
+    ['China Connectivity', 'Our regional capabilities support cargo originating from or destined for major commercial and manufacturing locations across Mainland China.'],
+    ['Multiple Freight Solutions', 'Air, sea, local transport, warehousing, customs clearance and specialized cargo services can be coordinated through one logistics partner.'],
+    ['Local Knowledge', 'Our team understands the operational requirements involved in moving cargo between Hong Kong, Mainland China and international destinations.'],
+    ['Global Network', 'As part of SKY HANDLERS LOGISTICS LIMITED, our customers benefit from broader international freight forwarding capabilities and destination support.'],
   ]
   return (
     <section className="content-shell pb-24 lg:pb-36">
-      <SectionHeading eyebrow="Why Sky Handlers" title="Capability where the route gets complex." />
+      <SectionHeading title="Why Work With SKY HANDLERS LOGISTICS LIMITED Hong Kong?" />
       <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{reasons.map(([title, text], index) => <Reveal key={title} delay={index * 0.04} className="rounded-[22px] bg-[#f4f4f1] p-6 lg:min-h-[220px]"><span className="eyebrow text-blue">0{index + 1}</span><h3 className="serif-display mt-12 text-3xl tracking-[-0.04em]">{title}</h3><p className="mt-3 text-sm leading-6 text-muted">{text}</p></Reveal>)}</div>
     </section>
   )
 }
 
-function IndexedList({ eyebrow, title, items }) {
+function IndexedList({ eyebrow, title, intro, itemsLabel, items }) {
   return (
     <section className="content-shell py-24 lg:py-36">
       <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
         <SectionHeading eyebrow={eyebrow} title={title} />
-        <div className="border-t border-ink/15">{items.map((item, index) => <Reveal key={item} delay={index * 0.025} className="grid grid-cols-[48px_1fr_auto] items-center border-b border-ink/12 py-4"><span className="text-[8px] font-bold tracking-[0.14em] text-blue">{String(index + 1).padStart(2, '0')}</span><span className="text-sm font-semibold">{item}</span><ArrowRight className="h-3.5 w-3.5 text-ink/25" /></Reveal>)}</div>
+        <div>{intro && <p className="mb-6 max-w-lg text-sm leading-7 text-muted">{intro}</p>}{itemsLabel && <p className="mb-3 text-xs font-semibold text-ink">{itemsLabel}</p>}<div className="border-t border-ink/15">{items.map((item, index) => <Reveal key={item} delay={index * 0.025} className="grid grid-cols-[48px_1fr_auto] items-center border-b border-ink/12 py-4"><span className="text-[8px] font-bold tracking-[0.14em] text-blue">{String(index + 1).padStart(2, '0')}</span><span className="text-sm font-semibold">{item}</span><ArrowRight className="h-3.5 w-3.5 text-ink/25" /></Reveal>)}</div></div>
       </div>
     </section>
   )
@@ -592,18 +641,15 @@ function ContactPage() {
           <img src="/hero-gateway.jpg" alt="" className="absolute inset-0 -z-20 h-full w-full object-cover" />
           <div className="absolute inset-0 -z-10 bg-ink/78" />
           <Reveal>
-            <p className="eyebrow text-white/60"><span className="text-acid">04</span> / Shipment enquiry</p>
-            <h1 className="serif-display mt-8 text-[clamp(4rem,7vw,7rem)] leading-[0.84] tracking-[-0.065em]">Let’s move your cargo.</h1>
-            <p className="mt-8 max-w-lg border-l border-acid pl-5 text-base leading-7 text-white/70">Tell us what needs to move, where it is coming from and where it needs to go.</p>
+            <p className="eyebrow text-white/60"><span className="text-acid">04</span> / Contact / Request a Quote</p>
+            <h1 className="serif-display mt-8 text-[clamp(4rem,7vw,7rem)] leading-[0.84] tracking-[-0.065em]">Let's Move Your Cargo</h1>
+            <h2 className="mt-8 max-w-lg text-2xl font-semibold leading-tight text-white/90">Talk to SKY HANDLERS LOGISTICS LIMITED Hong Kong</h2>
+            <div className="mt-6 max-w-lg space-y-3 border-l border-acid pl-5 text-base leading-7 text-white/70"><p>Whether you are importing into Hong Kong, exporting from China or moving cargo between Asia and international markets, our team is ready to discuss your logistics requirements.</p><p>Tell us what you need to move, where it is coming from and where it needs to go.</p><p>We will work with you to identify the appropriate logistics solution.</p></div>
           </Reveal>
-          <div className="mt-24 grid gap-7 border-t border-white/15 pt-7 text-xs leading-6 text-white/55 sm:grid-cols-2">
-            <div><strong className="eyebrow block text-white">Hong Kong Office</strong><span className="mt-3 block">[Insert Full Hong Kong Office Address]</span></div>
-            <div><strong className="eyebrow block text-white">Direct contact</strong><span className="mt-3 block">[Insert Hong Kong Number]<br />[Insert Hong Kong Email]<br />[Insert WhatsApp Number]</span></div>
-          </div>
         </div>
 
         <div className="px-6 py-14 text-ink lg:px-12 lg:py-20">
-          <div className="mb-10 flex items-center justify-between border-b border-ink/12 pb-5"><p className="eyebrow text-ink/45">Request a quote</p><MapPin className="h-4 w-4 text-blue" /></div>
+          <div className="mb-10 flex items-center justify-between border-b border-ink/12 pb-5"><p className="eyebrow text-ink/45">Request a Quote</p><MapPin className="h-4 w-4 text-blue" /></div>
           {submitted ? (
             <motion.div initial={{ opacity: 0, transform: 'translateY(12px)' }} animate={{ opacity: 1, transform: 'translateY(0px)' }} transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }} className="flex min-h-[460px] flex-col justify-center">
               <PackageCheck className="h-9 w-9 text-blue" strokeWidth={1.4} />
@@ -612,6 +658,8 @@ function ContactPage() {
               <button type="button" onClick={() => setSubmitted(false)} className="focus-ring mt-9 w-fit border-b border-ink pb-2 text-[9px] font-bold uppercase tracking-[0.14em]">Send another inquiry</button>
             </motion.div>
           ) : <QuoteForm onSubmit={() => setSubmitted(true)} />}
+          <div className="mt-16 border-t border-ink/12 pt-8"><h2 className="serif-display text-4xl tracking-[-0.045em]">Need Help Choosing the Right Solution?</h2><div className="mt-4 space-y-3 text-sm leading-7 text-muted"><p>Not every customer knows exactly which logistics service is required.</p><p>Send us your shipment details and our team can help assess the appropriate combination of freight and supporting logistics services.</p></div></div>
+          <div className="mt-12 border-t border-ink/12 pt-8 text-sm leading-7 text-muted"><h2 className="serif-display text-4xl tracking-[-0.045em]">SKY HANDLERS LOGISTICS LIMITED Hong Kong</h2><strong className="eyebrow mt-7 block text-ink">Hong Kong Office</strong><p className="mt-3">[Insert Full Hong Kong Office Address]</p><p className="mt-5">Telephone:<br />[Insert Hong Kong Number]</p><p className="mt-5">Email:<br />[Insert Hong Kong Email]</p><p className="mt-5">WhatsApp:<br />[Insert Number]</p><p className="mt-5">Office Hours:<br />[Insert Office Hours]</p></div>
         </div>
       </div>
     </section>
@@ -622,13 +670,11 @@ function QuoteForm({ onSubmit }) {
   return (
     <form onSubmit={(event) => { event.preventDefault(); onSubmit() }} className="grid gap-x-5 gap-y-5 sm:grid-cols-2">
       <Field id="name" label="Name" required />
-      <Field id="company" label="Company name" />
-      <Field id="email" label="Email address" type="email" required />
+      <Field id="company" label="Company Name" />
+      <Field id="email" label="Email Address" type="email" required />
       <Field id="phone" label="Telephone / WhatsApp" />
-      <Field id="origin" label="Cargo origin" />
-      <Field id="destination" label="Destination" />
-      <label className="field sm:col-span-2"><span>Shipment details *</span><textarea id="message" required rows="5" placeholder="Cargo type, dimensions, weight, timing and special handling" /></label>
-      <button className="focus-ring touchable mt-2 inline-flex min-h-13 items-center justify-between gap-8 rounded-lg bg-acid px-5 text-[9px] font-bold uppercase tracking-[0.15em] text-ink sm:col-span-2 sm:w-fit">Submit inquiry <ArrowUpRight className="h-4 w-4" /></button>
+      <label className="field sm:col-span-2"><span>Message *</span><textarea id="message" required rows="5" /></label>
+      <button className="focus-ring touchable mt-2 inline-flex min-h-13 items-center justify-between gap-8 rounded-lg bg-acid px-5 text-[9px] font-bold uppercase tracking-[0.15em] text-ink sm:col-span-2 sm:w-fit">SUBMIT YOUR INQUIRY <ArrowUpRight className="h-4 w-4" /></button>
     </form>
   )
 }
@@ -640,8 +686,8 @@ function Field({ id, label, type = 'text', required = false }) {
 function SectionHeading({ eyebrow, title, light = false }) {
   return (
     <Reveal>
-      <p className={'eyebrow ' + (light ? 'text-white/55' : 'text-ink/45')}>+ {eyebrow}</p>
-      <h2 className={'serif-display mt-6 max-w-4xl text-[clamp(2.7rem,5vw,5.2rem)] leading-[0.94] tracking-[-0.055em] ' + (light ? 'text-white' : '')}>{title}</h2>
+      {eyebrow && <p className={'eyebrow ' + (light ? 'text-white/55' : 'text-ink/45')}>+ {eyebrow}</p>}
+      <h2 className={'serif-display ' + (eyebrow ? 'mt-6 ' : '') + 'max-w-4xl text-[clamp(2.7rem,5vw,5.2rem)] leading-[0.94] tracking-[-0.055em] ' + (light ? 'text-white' : '')}>{title}</h2>
     </Reveal>
   )
 }
@@ -661,12 +707,12 @@ function Reveal({ children, className = '', delay = 0 }) {
   )
 }
 
-function CTA({ title, text }) {
+function CTA({ title, text, paragraphs, buttonLabel = 'REQUEST A QUOTE' }) {
   return (
     <section className="mx-4 mb-4 overflow-hidden rounded-[28px] bg-blue text-white lg:mx-9 lg:mb-9">
       <div className="mx-auto grid max-w-[1260px] gap-10 px-6 py-20 lg:grid-cols-[1fr_auto] lg:items-end lg:px-10 lg:py-24">
-        <Reveal><p className="eyebrow text-white/55">Next movement</p><h2 className="serif-display mt-6 max-w-4xl text-[clamp(3.2rem,5.8vw,6rem)] leading-[0.9] tracking-[-0.06em]">{title}</h2><p className="mt-6 max-w-2xl text-sm leading-7 text-white/70">{text}</p></Reveal>
-        <Reveal delay={0.08}><LinkButton href="/contact" light>Start an enquiry</LinkButton></Reveal>
+        <Reveal><h2 className="serif-display max-w-4xl text-[clamp(3.2rem,5.8vw,6rem)] leading-[0.9] tracking-[-0.06em]">{title}</h2>{paragraphs ? <div className="mt-6 max-w-2xl space-y-3 text-sm leading-7 text-white/70">{paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div> : <p className="mt-6 max-w-2xl text-sm leading-7 text-white/70">{text}</p>}</Reveal>
+        <Reveal delay={0.08}><LinkButton href="/contact" light>{buttonLabel}</LinkButton></Reveal>
       </div>
     </section>
   )
@@ -680,11 +726,11 @@ function Footer({ path, go }) {
   return (
     <footer className="mx-auto max-w-[1500px] rounded-t-[28px] bg-ink px-6 py-14 text-white lg:px-12 lg:py-16">
       <div className="grid gap-12 border-b border-white/12 pb-12 lg:grid-cols-[1.3fr_.7fr_1fr]">
-        <div><div className="flex items-center gap-3"><span className="brand-mark brand-mark-light">SH</span><strong className="text-[10px] uppercase tracking-[0.16em]">Sky Handlers Logistics Limited</strong></div><p className="serif-display mt-8 max-w-md text-3xl leading-9 tracking-[-0.04em] text-white/85">Your logistics gateway to Hong Kong, China and the world.</p></div>
-        <nav><p className="eyebrow text-white/40">Navigation</p><div className="mt-5 grid gap-3 text-xs">{nav.map((item) => <a key={item.href} href={item.href} onClick={go(item.href)} className={path === item.href ? 'text-acid' : 'text-white/50 hover:text-white'}>{item.label}</a>)}</div></nav>
-        <div><p className="eyebrow text-white/40">Services</p><p className="mt-5 text-xs leading-7 text-white/48">Air Freight / Sea Freight / China Logistics / Warehousing / Customs Clearance / Dangerous Goods / Cargo Consolidation</p></div>
+        <div><div className="flex items-center gap-3"><span className="brand-mark brand-mark-light">SH</span><strong className="text-[10px] uppercase tracking-[0.16em]">SKY HANDLERS LOGISTICS LIMITED Hong Kong</strong></div><p className="serif-display mt-8 max-w-md text-3xl leading-9 tracking-[-0.04em] text-white/85">Your Logistics Gateway to Hong Kong, China & the World</p></div>
+        <nav><p className="eyebrow text-white/40">Quick Links</p><div className="mt-5 grid gap-3 text-xs">{nav.map((item) => <a key={item.href} href={item.href} onClick={go(item.href)} className={path === item.href ? 'text-acid' : 'text-white/50 hover:text-white'}>{item.label}</a>)}<a href="/contact" onClick={go('/contact')} className="text-white/50 hover:text-white">Request a Quote</a></div></nav>
+        <div><p className="eyebrow text-white/40">Services</p><p className="mt-5 text-xs leading-7 text-white/48">Air Freight / Sea Freight / China Logistics / Hong Kong Local Services / Warehousing / Customs Clearance / Dangerous Goods / Cargo Consolidation</p><p className="eyebrow mt-8 text-white/40">Connect With SKY HANDLERS LOGISTICS LIMITED</p><p className="mt-3 text-xs leading-7 text-white/48">Hong Kong | China | UAE | Central Asia | India | International Network</p></div>
       </div>
-      <div className="flex flex-col justify-between gap-4 pt-7 text-[8px] uppercase tracking-[0.14em] text-white/30 sm:flex-row"><span>© 2026 Sky Handlers Logistics Limited.</span><span>Hong Kong / China / UAE / Central Asia / India / International Network</span></div>
+      <div className="flex flex-col justify-between gap-4 pt-7 text-[8px] uppercase tracking-[0.14em] text-white/30 sm:flex-row"><span>© 2026 SKY HANDLERS LOGISTICS LIMITED. All Rights Reserved.</span><span>Privacy Policy | Cookies Policy | Terms & Conditions</span></div>
     </footer>
   )
 }

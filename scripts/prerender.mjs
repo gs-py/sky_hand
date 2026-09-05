@@ -3,20 +3,20 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 const origin = 'https://sky-handlers-logistics-limited.vercel.app'
 const pages = {
   about: {
-    title: 'About Sky Handlers Logistics | Hong Kong Freight Partner',
-    description: 'Meet the Hong Kong logistics partner coordinating freight, warehousing, customs and cargo movement across China and global markets.',
+    title: 'About SKY HANDLERS LOGISTICS LIMITED Hong Kong',
+    description: 'Local Expertise. Regional Connectivity. Global Reach.',
   },
   freight: {
-    title: 'Air & Sea Freight from Hong Kong and China | Sky Handlers',
-    description: 'International air and sea freight for urgent, high-value, consolidated, project and oversized cargo from Hong Kong and Mainland China.',
+    title: 'International Freight Solutions from Hong Kong & China',
+    description: 'Connecting Your Cargo to Global Markets',
   },
   'china-logistics': {
-    title: 'Hong Kong & China Logistics Services | Sky Handlers',
-    description: 'Factory pickup, supplier collection, cross-border transport, warehousing, customs clearance and export handling across Hong Kong and China.',
+    title: 'More Than Freight Forwarding',
+    description: 'Complete Logistics Support Across Hong Kong & Mainland China',
   },
   contact: {
-    title: 'Request a Freight Quote | Sky Handlers Logistics',
-    description: 'Contact Sky Handlers Logistics for a tailored air freight, sea freight, warehousing, customs or China logistics quotation.',
+    title: "Let's Move Your Cargo",
+    description: 'Talk to SKY HANDLERS LOGISTICS LIMITED Hong Kong',
   },
 }
 
