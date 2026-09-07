@@ -642,7 +642,7 @@ function ContactPage() {
             </motion.div>
           ) : <QuoteForm onSubmit={() => setSubmitted(true)} />}
           <div className="mt-16 border-t border-ink/12 pt-8"><h2 className="serif-display text-4xl tracking-[-0.045em]">Need Help Choosing the Right Solution?</h2><div className="mt-4 space-y-3 text-sm leading-7 text-muted"><p>Not every customer knows exactly which logistics service is required.</p><p>Send us your shipment details and our team can help assess the appropriate combination of freight and supporting logistics services.</p></div></div>
-          <div className="mt-12 border-t border-ink/12 pt-8 text-sm leading-7 text-muted"><h2 className="serif-display text-4xl tracking-[-0.045em]">SKY HANDLERS LOGISTICS LIMITED Hong Kong</h2><strong className="eyebrow mt-7 block text-ink">Hong Kong Office</strong><p className="mt-3">3906, 39/F, THE CENTER, 99 QUEEN'S ROAD, CENTRAL HONG KONG</p></div>
+          <div className="mt-12 border-t border-ink/12 pt-8 text-sm leading-7 text-muted"><h2 className="serif-display text-4xl tracking-[-0.045em]">SKY HANDLERS LOGISTICS LIMITED Hong Kong</h2><strong className="eyebrow mt-7 block text-ink">Hong Kong Office</strong><p className="mt-3">3906, 39/F, THE CENTER, 99 QUEEN'S ROAD, CENTRAL HONG KONG</p><p className="mt-5">Email:<br /><a href="mailto:sales@skyhandlerslogistics.com" className="text-blue hover:underline">sales@skyhandlerslogistics.com</a></p></div>
         </div>
       </div>
     </section>
@@ -709,7 +709,7 @@ function Footer({ path, go }) {
   return (
     <footer className="mx-auto max-w-[1500px] rounded-t-[28px] bg-ink px-6 py-14 text-white lg:px-12 lg:py-16">
       <div className="grid gap-12 border-b border-white/12 pb-12 lg:grid-cols-[1.3fr_.7fr_1fr]">
-        <div><div className="flex items-center gap-3"><span className="brand-mark brand-mark-light">SH</span><strong className="text-[10px] uppercase tracking-[0.16em]">SKY HANDLERS LOGISTICS LIMITED Hong Kong</strong></div><p className="serif-display mt-8 max-w-md text-3xl leading-9 tracking-[-0.04em] text-white/85">Your Logistics Gateway to Hong Kong, China & the World</p></div>
+        <div><img src="/sky-handlers-logo.png" alt="Sky Handlers Logistics Limited" className="h-20 w-28 rounded-lg bg-white object-contain p-2" /><p className="serif-display mt-8 max-w-md text-3xl leading-9 tracking-[-0.04em] text-white/85">Your Logistics Gateway to Hong Kong, China & the World</p></div>
         <nav><p className="eyebrow text-white/40">Quick Links</p><div className="mt-5 grid gap-3 text-xs">{nav.map((item) => <a key={item.href} href={item.href} onClick={go(item.href)} className={path === item.href ? 'text-acid' : 'text-white/50 hover:text-white'}>{item.label}</a>)}<a href="/contact" onClick={go('/contact')} className="text-white/50 hover:text-white">Request a Quote</a></div></nav>
         <div><p className="eyebrow text-white/40">Services</p><p className="mt-5 text-xs leading-7 text-white/48">Air Freight / Sea Freight / China Logistics / Hong Kong Local Services / Warehousing / Customs Clearance / Dangerous Goods / Cargo Consolidation</p><p className="eyebrow mt-8 text-white/40">Connect With SKY HANDLERS LOGISTICS LIMITED</p><p className="mt-3 text-xs leading-7 text-white/48">Hong Kong | China | UAE | Central Asia | India | International Network</p></div>
       </div>
