@@ -168,11 +168,7 @@ function Header({ path, go, menuOpen, setMenuOpen }) {
     <header className="fixed inset-x-0 top-[calc(1.25rem+env(safe-area-inset-top))] z-50 px-5 lg:top-8 lg:px-10">
       <div className="nav-shell mx-auto flex h-14 max-w-[1120px] items-center rounded-2xl border border-white/60 bg-white/90 px-3 shadow-[0_16px_40px_rgba(17,32,37,.15)] backdrop-blur-xl lg:h-16 lg:px-4">
         <a href="/" onClick={go('/')} className="focus-ring flex items-center gap-3">
-          <span className="brand-mark">SH</span>
-          <span>
-            <strong className="block text-[11px] uppercase tracking-[0.15em] text-ink">SKY HANDLERS</strong>
-            <span className="mt-0.5 block text-[8px] uppercase tracking-[0.18em] text-ink/45">LOGISTICS LIMITED</span>
-          </span>
+          <img src="/sky-handlers-logo.png" alt="Sky Handlers Logistics Limited" className="h-12 w-16 object-contain" />
         </a>
 
         <nav className="mx-auto hidden h-full items-center lg:flex">
@@ -395,7 +391,6 @@ function FreightPage() {
       />
       <FreightModes />
       <IndexedList eyebrow="" title="Origin Services in China" intro="We can coordinate cargo originating from different suppliers and locations across China." itemsLabel="Services may include:" items={originServices} />
-      <DecisionSection />
       <CTA title="Not Sure Whether to Ship by Air or Sea?" paragraphs={["Our team can assess your shipment based on:", "Cargo Type | Weight | Volume | Urgency | Destination | Budget | Special Handling Requirements", "We can then recommend an appropriate routing and transportation solution."]} buttonLabel="REQUEST A FREIGHT QUOTE" />
     </>
   )
@@ -647,7 +642,7 @@ function ContactPage() {
             </motion.div>
           ) : <QuoteForm onSubmit={() => setSubmitted(true)} />}
           <div className="mt-16 border-t border-ink/12 pt-8"><h2 className="serif-display text-4xl tracking-[-0.045em]">Need Help Choosing the Right Solution?</h2><div className="mt-4 space-y-3 text-sm leading-7 text-muted"><p>Not every customer knows exactly which logistics service is required.</p><p>Send us your shipment details and our team can help assess the appropriate combination of freight and supporting logistics services.</p></div></div>
-          <div className="mt-12 border-t border-ink/12 pt-8 text-sm leading-7 text-muted"><h2 className="serif-display text-4xl tracking-[-0.045em]">SKY HANDLERS LOGISTICS LIMITED Hong Kong</h2><strong className="eyebrow mt-7 block text-ink">Hong Kong Office</strong><p className="mt-3">[Insert Full Hong Kong Office Address]</p><p className="mt-5">Telephone:<br />[Insert Hong Kong Number]</p><p className="mt-5">Email:<br />[Insert Hong Kong Email]</p><p className="mt-5">WhatsApp:<br />[Insert Number]</p><p className="mt-5">Office Hours:<br />[Insert Office Hours]</p></div>
+          <div className="mt-12 border-t border-ink/12 pt-8 text-sm leading-7 text-muted"><h2 className="serif-display text-4xl tracking-[-0.045em]">SKY HANDLERS LOGISTICS LIMITED Hong Kong</h2><strong className="eyebrow mt-7 block text-ink">Hong Kong Office</strong><p className="mt-3">3906, 39/F, THE CENTER, 99 QUEEN'S ROAD, CENTRAL HONG KONG</p></div>
         </div>
       </div>
     </section>
