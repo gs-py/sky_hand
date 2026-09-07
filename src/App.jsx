@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 import ScrollLockedVideoHero from './components/ui/scroll-locked-video-hero'
+import { pageSeo, siteOrigin, structuredData } from './seo'
 import {
   ArrowRight,
   ArrowUpRight,
@@ -26,29 +27,6 @@ const nav = [
   { href: '/china-logistics', label: 'Hong Kong & China Logistics' },
   { href: '/contact', label: 'Contact Us' },
 ]
-
-const pageSeo = {
-  '/': {
-    title: 'Your Logistics Gateway to Hong Kong, China & the World',
-    description: 'Freight Forwarding & Logistics Solutions Connecting Asia to Global Markets',
-  },
-  '/about': {
-    title: 'About SKY HANDLERS LOGISTICS LIMITED Hong Kong',
-    description: 'Local Expertise. Regional Connectivity. Global Reach.',
-  },
-  '/freight': {
-    title: 'International Freight Solutions from Hong Kong & China',
-    description: 'Connecting Your Cargo to Global Markets',
-  },
-  '/china-logistics': {
-    title: 'More Than Freight Forwarding',
-    description: 'Complete Logistics Support Across Hong Kong & Mainland China',
-  },
-  '/contact': {
-    title: "Let's Move Your Cargo",
-    description: 'Talk to SKY HANDLERS LOGISTICS LIMITED Hong Kong',
-  },
-}
 
 const validPaths = new Set(nav.map((item) => item.href))
 const network = ['Hong Kong', 'Dubai', 'Mumbai', 'Istanbul', 'Jeddah', 'Bangkok']
@@ -105,8 +83,8 @@ const warehousing = ['Short-Term Storage', 'Long-Term Storage', 'Cargo Receiving
 const clearance = ['Import Clearance', 'Export Clearance', 'Customs Documentation', 'Shipment Documentation Review', 'Import & Export Coordination', 'Permit Coordination where applicable', 'Cargo Release Coordination']
 const dangerousGoods = ['DG Shipment Assessment', 'Documentation Coordination', 'Packing Coordination', 'Labelling & Marking', 'Airline / Carrier Coordination', 'Customs Documentation', 'DG Warehousing Coordination', 'Air Freight', 'Sea Freight', 'Local Transportation']
 
-function App() {
-  const [path, setPath] = useState(() => normalizePath(window.location.pathname))
+function App({ initialPath }) {
+  const [path, setPath] = useState(() => normalizePath(initialPath ?? window.location.pathname))
   const [menuOpen, setMenuOpen] = useState(false)
   const reduceMotion = useReducedMotion()
 
@@ -118,7 +96,7 @@ function App() {
 
   useEffect(() => {
     const seo = pageSeo[path]
-    const canonical = window.location.origin + path
+    const canonical = siteOrigin + path
     document.title = seo.title
     document.querySelector('meta[name="description"]').content = seo.description
     document.querySelector('meta[property="og:title"]').content = seo.title
@@ -127,6 +105,7 @@ function App() {
     document.querySelector('meta[name="twitter:title"]').content = seo.title
     document.querySelector('meta[name="twitter:description"]').content = seo.description
     document.querySelector('link[rel="canonical"]').href = canonical
+    document.querySelector('script[type="application/ld+json"]').textContent = JSON.stringify(structuredData(path))
   }, [path])
 
   const page = useMemo(() => ({
@@ -148,7 +127,7 @@ function App() {
       <Header path={path} go={go} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <motion.main
         key={path}
-        initial={{ opacity: 0, transform: reduceMotion ? 'none' : 'translateY(10px)' }}
+        initial={false}
         animate={{ opacity: 1, transform: 'translateY(0px)' }}
         transition={{ duration: reduceMotion ? 0.15 : 0.42, ease: [0.23, 1, 0.32, 1] }}
         className="page-canvas"
@@ -161,11 +140,12 @@ function App() {
 }
 
 function normalizePath(path) {
-  return validPaths.has(path) ? path : '/'
+  const normalized = path.replace(/\/index\.html$/, '').replace(/\/$/, '') || '/'
+  return validPaths.has(normalized) ? normalized : '/'
 }
 
 function useMobileLayout() {
-  const [isMobile, setIsMobile] = useState(() => window.matchMedia('(max-width: 720px)').matches)
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.matchMedia('(max-width: 720px)').matches)
 
   useEffect(() => {
     const media = window.matchMedia('(max-width: 720px)')
@@ -704,7 +684,7 @@ function Reveal({ children, className = '', delay = 0 }) {
   const reduceMotion = useReducedMotion()
   return (
     <motion.div
-      initial={{ opacity: 0, transform: reduceMotion ? 'none' : 'translateY(20px)' }}
+      initial={false}
       whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
       viewport={{ once: true, amount: 0.12 }}
       transition={{ duration: reduceMotion ? 0.15 : 0.5, delay: reduceMotion ? 0 : delay, ease: [0.23, 1, 0.32, 1] }}

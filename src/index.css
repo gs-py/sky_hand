@@ -557,10 +557,6 @@ a {
     object-position: 61% center;
   }
 
-  .home-desktop-hero {
-    display: none;
-  }
-
   .mobile-home-hero {
     position: relative;
     display: flex;
