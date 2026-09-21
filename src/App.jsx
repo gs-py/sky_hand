@@ -713,7 +713,7 @@ function Footer({ path, go }) {
         <nav><p className="eyebrow text-white/40">Quick Links</p><div className="mt-5 grid gap-3 text-xs">{nav.map((item) => <a key={item.href} href={item.href} onClick={go(item.href)} className={path === item.href ? 'text-acid' : 'text-white/50 hover:text-white'}>{item.label}</a>)}<a href="/contact" onClick={go('/contact')} className="text-white/50 hover:text-white">Request a Quote</a></div></nav>
         <div><p className="eyebrow text-white/40">Services</p><p className="mt-5 text-xs leading-7 text-white/48">Air Freight / Sea Freight / China Logistics / Hong Kong Local Services / Warehousing / Customs Clearance / Dangerous Goods / Cargo Consolidation</p><p className="eyebrow mt-8 text-white/40">Connect With SKY HANDLERS LOGISTICS LIMITED</p><p className="mt-3 text-xs leading-7 text-white/48">Hong Kong | China | UAE | Central Asia | India | International Network</p></div>
       </div>
-      <div className="flex flex-col justify-between gap-4 pt-7 text-[8px] uppercase tracking-[0.14em] text-white/30 sm:flex-row"><span>© 2026 SKY HANDLERS LOGISTICS LIMITED. All Rights Reserved.</span><span>Privacy Policy | Cookies Policy | Terms & Conditions</span></div>
+      <div className="flex flex-col justify-between gap-4 pt-7 text-[8px] uppercase tracking-[0.14em] text-white/30 sm:flex-row"><span>© 2026 SKY HANDLERS LOGISTICS LIMITED. All Rights Reserved.</span><span>Privacy Policy | Cookies Policy | Terms & Conditions</span><a href="https://xone13.com" target="_blank" rel="noreferrer noopener" className="transition-colors hover:text-acid">Powered by XONE13</a></div>
     </footer>
   )
 }
